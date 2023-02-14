@@ -1,0 +1,19 @@
+{
+  "name": "tcpBridgeCroquet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tcp-bridge.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "net": "^1.0.2",
+    "node": "^19.3.0",
+    "socket.io-client": "^4.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
