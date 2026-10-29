@@ -11,6 +11,10 @@ publish/subscribe messages in both directions.
 It was built for my bachelor's thesis, together with the Unity client:
 [hololens-croquet-client](https://github.com/TonelliLuca/hololens-croquet-client).
 
+> **Context:** this project dates from early 2023, before Croquet released its official
+> Unity integration (Croquet for Unity). At the time there was no supported way to run a
+> Croquet session from Unity, so this bridge-based approach was built from scratch.
+
 ## Architecture
 
 ```mermaid
