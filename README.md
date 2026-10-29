@@ -17,16 +17,13 @@ It was built for my bachelor's thesis, together with the Unity client:
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    H["HoloLens 2<br/>Unity app<br/>(hololens-croquet-client)"]
-    B["tcp-bridge.js<br/>(this repo)"]
-    S["Socket.IO server<br/>hosting the Croquet session"]
-    C(("Croquet<br/>reflector"))
-
-    H <-- "TCP :10000<br/>JSON lines" --> B
-    B <-- "Socket.IO<br/>localhost:3000" --> S
-    S <--> C
+```
+┌──────────────────────┐   TCP :10000    ┌───────────────┐   Socket.IO      ┌──────────────────┐
+│ HoloLens 2           │   JSON lines    │ tcp-bridge.js │   localhost:3000 │ Socket.IO server │ ──► Croquet
+│ Unity app            │ ◄─────────────► │ (this repo)   │ ◄──────────────► │ hosting the      │     reflector
+│ (hololens-croquet-   │                 │               │                  │ Croquet session  │
+│  client)             │                 └───────────────┘                  └──────────────────┘
+└──────────────────────┘
 ```
 
 - **Headset side:** a TCP server on port `10000`. Each message is one JSON object
